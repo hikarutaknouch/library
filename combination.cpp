@@ -1,10 +1,10 @@
 #include <iostream>
 using namespace std;
-
+typedef long long ll;
 const int MAX = 510000;
 const int MOD = 1000000007;
 
-long long fac[MAX], finv[MAX], inv[MAX];
+ll fac[MAX], finv[MAX], inv[MAX];
 
 // テーブルを作る前処理
 void COMinit() {
@@ -19,7 +19,7 @@ void COMinit() {
 }
 
 // 二項係数計算
-long long COM(int n, int k){
+ll COM(int n, int k){
     if (n < k) return 0;
     if (n < 0 || k < 0) return 0;
     return fac[n] * (finv[k] * finv[n - k] % MOD) % MOD;
