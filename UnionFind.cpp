@@ -30,6 +30,9 @@ struct UnionFind {
     bool Same(int x, int y) {
         return Find(x) == Find(y);
     }
+    int Size(int x) {
+        return size[Find(x)];
+    }
 };
 
 int main() {
