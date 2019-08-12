@@ -13,9 +13,8 @@ const ll INF = 1000000000;
 
 struct UnionFind {
     vector<int> par, size;
-    UnionFind(int n) : par(n), size(n) {
+    UnionFind(int n) : par(n), size(n,1) {
         for(int i = 0; i < n; ++i) par[i] = i;
-        size.assign(n,1);
     }
     void Union(int x, int y) {
         x = Find(x), y = Find(y);
