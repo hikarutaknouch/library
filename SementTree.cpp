@@ -21,7 +21,7 @@ struct SegmentTree {
     }
     void build() {
         for(int k = n-1; k > 0; --k) {
-            data[k] = f(data[2*k + 0], data[2*k + 1]);
+            data[k] = f(data[2*k], data[2*k + 1]);
         }
     }
     void update(int k, const Monoid &p) {

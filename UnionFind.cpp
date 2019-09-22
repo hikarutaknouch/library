@@ -13,22 +13,22 @@ struct UnionFind {
     UnionFind(int n) : par(n), size(n,1) {
         for(int i = 0; i < n; ++i) par[i] = i;
     }
-    void Union(int x, int y) {
-        x = Find(x), y = Find(y);
+    void unite(int x, int y) {
+        x = find(x), y = find(y);
         if(x == y) return;
         if(size[x] < size[y]) swap(x,y);
         size[x] += size[y];
         par[y] = x;
     }
-    int Find(int x) {
+    int find(int x) {
         if(par[x]==x) return x;
-        else return par[x] = Find(par[x]);
+        else return par[x] = find(par[x]);
     }
     bool Same(int x, int y) {
-        return Find(x) == Find(y);
+        return find(x) == find(y);
     }
     int Size(int x) {
-        return size[Find(x)];
+        return size[find(x)];
     }
 };
 
