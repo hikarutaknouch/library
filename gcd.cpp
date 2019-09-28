@@ -8,10 +8,11 @@ using namespace std;
 typedef long long ll;
 const ll MOD = 1000000007;
 
-ll gcd(ll x, ll y) {
+template<typename T>
+T gcd(T x, T y) {
     if(x<y) gcd(y,x);
     while(y>0) {
-        ll tmp = x%y;
+        T tmp = x%y;
         x = y;
         y = tmp;
     }
@@ -19,7 +20,7 @@ ll gcd(ll x, ll y) {
 }
 
 int main() {
-    ll x,y; cin >> x >> y;
+    int x,y; cin >> x >> y;
     cout << gcd(x,y) << endl;
     return 0;
 }
