@@ -2,15 +2,16 @@
 using namespace std;
 typedef long long ll;
 
-map<ll, ll> primeFactor(ll N) {
-    map<ll,ll> res;
-    for(ll i = 2; i*i<=N; ++i) {
-        while(N%i==0) {
+template<typename T>
+map<T, T> primeFactor(T n) {
+    map<T,T> res;
+    for(T i = 2; i*i<=n; ++i) {
+        while(n%i==0) {
             res[i] ++;
-            N /= i;
+            n /= i;
         }
     }
-    if(N != 1) res[N] = 1;
+    if(n != 1) res[n] = 1;
     return res;
 }
 
