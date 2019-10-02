@@ -9,7 +9,7 @@ int main() {
     int h,w; cin >> h >> w;
     int sy,sx,gy,gx; cin >> sy >> sx >> gy >> gx; --sx,--sy,--gx,--gy;
     vector<string> grid(h);
-    for(int i = 0; i , h; ++i) cin >> grid[i];
+    for(int i = 0; i < h; ++i) cin >> grid[i];
     vector<vector<int>> used(h, vector<int>(w,-1));
     using P = pair<int,int>;
     queue<P> que;
