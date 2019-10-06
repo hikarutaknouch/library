@@ -3,7 +3,7 @@ using namespace std;
 
 template<typename T>
 T GCD(T x, T y) {
-    if(x<y) gcd(y,x);
+    if(x<y) GCD(y,x);
     while(y>0) {
         T tmp = x%y;
         x = y;
