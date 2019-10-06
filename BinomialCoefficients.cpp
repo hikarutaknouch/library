@@ -56,7 +56,7 @@ template<typename M>
 struct BinomialCoefficients {
     vector<M> fact, finv, inv;
     BinomialCoefficients() {};
-    BinomialCoefficients(int n) : fact(n+1,1), finv(n+1,1), inv(n+1,1) {
+    BinomialCoefficients(int n) : fact(n+1), finv(n+1), inv(n+1) {
         init(n);
     }
     void init(int n) {
@@ -85,7 +85,7 @@ using mint = ModInt<MOD>;
 int main() {
     cin.tie(0);
     ios::sync_with_stdio(false);
-    mint n;
+    int n;
     BinomialCoefficients<mint> bc(n);
     return 0;
 }
