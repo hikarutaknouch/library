@@ -6,20 +6,20 @@ template<int MOD>
 struct ModInt {
     using M = ModInt;
     long long val;
-    ModInt(long long v = 0) {set_val(v%MOD+MOD);}
+    ModInt(long long v = 0) {set_val(v % MOD + MOD);}
     M& set_val(unsigned int v) {
         val = v<MOD ? v : v - MOD;
         return *this;
     }
     M operator-() const {return M() - *this;}
-    M operator+(const M& r) const {return M().set_val(val+r.val);}
-    M operator-(const M& r) const {return M().set_val(val+MOD-r.val);}
-    M operator*(const M& r) const {return M().set_val(val*r.val%MOD);}
+    M operator+(const M& r) const {return M().set_val(val + r.val);}
+    M operator-(const M& r) const {return M().set_val(val + MOD - r.val);}
+    M operator*(const M& r) const {return M().set_val(long long (val) * r.val % MOD);}
     M operator/(const M& r) const {return *this * r.inverse();}
-    M& operator+=(const M& r) {return *this = *this+r;}
-    M& operator-=(const M& r) {return *this = *this-r;}
-    M& operator*=(const M& r) {return *this = *this*r;}
-    M& operator/=(const M& r) {return *this = *this/r;}
+    M& operator+=(const M& r) {return *this = *this + r;}
+    M& operator-=(const M& r) {return *this = *this - r;}
+    M& operator*=(const M& r) {return *this = *this * r;}
+    M& operator/=(const M& r) {return *this = *this / r;}
     bool operator==(const M& r) const {return val == r.val;}
     M pow(long long n) const {
         M x = *this, r = 1;
