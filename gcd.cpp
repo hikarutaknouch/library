@@ -2,7 +2,7 @@
 using namespace std;
 
 template<typename T>
-T gcd(T x, T y) {
+T GCD(T x, T y) {
     if(x<y) gcd(y,x);
     while(y>0) {
         T tmp = x%y;
@@ -13,7 +13,9 @@ T gcd(T x, T y) {
 }
 
 int main() {
+    cin.tie(0);
+    ios::sync_with_stdio(false);
     int x,y; cin >> x >> y;
-    cout << gcd(x,y) << endl;
+    int n = GCD(x,y);
     return 0;
 }
