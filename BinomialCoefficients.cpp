@@ -13,11 +13,11 @@ struct ModInt {
         val = v<MOD ? v : v - MOD;
         return *this;
     }
-    explicit operator bool() const {return v != 0;}
+    explicit operator bool() const {return val != 0;}
     M operator-() const {return M() - *this;}
     M operator+(const M& r) const {return M().set_val(val + r.val);}
     M operator-(const M& r) const {return M().set_val(val + MOD - r.val);}
-    M operator*(const M& r) const {return M().set_val(long long (val) * r.val % MOD);}
+    M operator*(const M& r) const {return M().set_val((long long) val * r.val % MOD);}
     M operator/(const M& r) const {return *this * r.inverse();}
     M& operator+=(const M& r) {return *this = *this + r;}
     M& operator-=(const M& r) {return *this = *this - r;}
