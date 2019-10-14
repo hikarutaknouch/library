@@ -3,8 +3,9 @@ using namespace std;
 
 template <typename T>
 bool isPrime(T x) {
+    if(x==1) return false;
     for(T i = 2; i*i <= x; ++i) {
-        if(!x%i) return false;
+        if(x%i==0) return false;
     }
     return true;
 }
