@@ -5,14 +5,14 @@ template<typename T>
 struct BinaryIndexedTree {
     vector<T> data;
     int n;
-    BinaryIndexedTree(int n, T x) : n(n), data(n+1,x) {}
+    BinaryIndexedTree(int n, T d) : n(n), data(n+1,d) {}
     T sum(int i) {
         T res = 0;
-        for(++i; i>0; i -= (i&-i)) res += data[i];
+        for(int x = i; x>0; x-=(x&-x)) res += data[x];
         return res;
     }
-    void add(int i, T x) {
-        for(++i; i <= n; i += i&-i) data[i] += x;
+    void add(int i, T v) {
+        for(int x = i; x<=n; x+=x&-x) data[x] += v;
     }
     int lower_bound(int k) {
         if(k <= 0) return 0;
