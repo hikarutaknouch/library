@@ -3,10 +3,10 @@ using namespace std;
 
 template<typename T>
 struct BinaryIndexedTree2D {
-    vector<vecotr<T>> data;
+    vector<vector<T>> data;
     int n,m;
     T d;
-    BinaryIndexedTree2D(int n,int m, T d) : n(n), m(m), d(d), data(n+1,vecotr<T>(m+1,x)) {}
+    BinaryIndexedTree2D(int n,int m, T d) : n(n), m(m), d(d), data(n+1,vector<T>(m+1,d)) {}
     T sum(int i, int j) {
         T res = d;
         for(int x = i; x>0; x-=x&-x) {
