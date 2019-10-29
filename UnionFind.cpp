@@ -17,10 +17,10 @@ struct UnionFind {
         if(par[x]==x) return x;
         else return par[x] = find(par[x]);
     }
-    bool Same(int x, int y) {
+    bool same(int x, int y) {
         return find(x) == find(y);
     }
-    int Size(int x) {
+    int size(int x) {
         return size[find(x)];
     }
 };
