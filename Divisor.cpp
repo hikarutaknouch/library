@@ -5,9 +5,9 @@ template<typename T>
 vector<T> Divisor(T x) {
     vector<T> res;
     for(T i = 1; i*i<=x; ++i) {
-        if(!x%i) {
+        if(x%i==0) {
             res.emplace_back(i);
-            if(i*i!=x) res.emplace_back(n/i);
+            if(i*i!=x) res.emplace_back(x/i);
         }
     }
     sort(res.begin(), res.end());
